@@ -5,7 +5,7 @@ def gen_digest(user, password, realm):
     return md5(':'.join((user, realm, password)).encode('utf-8')).hexdigest()
 
 def main():
-    parser = argparse.ArgumentParser(description='Generating htdigest.')
+    parser = argparse.ArgumentParser(description='Generating digest.')
     parser.add_argument('-u', '--user', required=True)
     parser.add_argument('-p', '--password', required=True)
     parser.add_argument('-r', '--realm', default='default')
